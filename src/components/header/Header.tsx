@@ -1,4 +1,5 @@
 import React from 'react'
+import { useViewport } from '../../hooks/useViewport'
 
 // Components
 import { ReactComponent as MenuIcon } from '../icons/menu.svg'
@@ -12,7 +13,8 @@ import { ReactComponent as LogoutIcon } from '../icons/logout.svg'
 import { HeaderContainer, ActionsContainer, ActionContainer } from './styles'
 
 export function Header() {
-  const isMobile = window.innerWidth <= 768
+  const { width } = useViewport()
+  const isMobile = width <= 768
   return (
     <HeaderContainer>
       {isMobile ? <HeaderMobile /> : <HeaderDesktop />}
