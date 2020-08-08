@@ -1,5 +1,12 @@
 export default {
   translation: {
-    welcome: 'Welcome to React and react-i18next',
+    applicants: 'Applicants',
+    stats: {
+      total: 'Total',
+      new: 'New',
+      viewed: 'Viewed',
+      appointment: 'Appointment',
+      others: 'Others',
+    },
   },
 }
