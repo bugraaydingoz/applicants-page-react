@@ -2,12 +2,12 @@ import React from 'react'
 import { useViewport } from '../../hooks/useViewport'
 
 // Components
-import { ReactComponent as MenuIcon } from '../icons/menu.svg'
-import { ReactComponent as Logo } from '../icons/logo.svg'
-import { ReactComponent as MessageActiveIcon } from '../icons/message-active.svg'
-import { ReactComponent as ContactIcon } from '../icons/contact.svg'
-import { ReactComponent as UserIcon } from '../icons/user.svg'
-import { ReactComponent as LogoutIcon } from '../icons/logout.svg'
+import { ReactComponent as MenuIcon } from '../shared/icons/menu.svg'
+import { ReactComponent as Logo } from '../shared/icons/logo.svg'
+import { ReactComponent as MessageActiveIcon } from '../shared/icons/message-active.svg'
+import { ReactComponent as ContactIcon } from '../shared/icons/contact.svg'
+import { ReactComponent as UserIcon } from '../shared/icons/user.svg'
+import { ReactComponent as LogoutIcon } from '../shared/icons/logout.svg'
 
 // Styles
 import { HeaderContainer, ActionsContainer, ActionContainer } from './styles'

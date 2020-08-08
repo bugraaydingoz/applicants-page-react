@@ -4,7 +4,7 @@ export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   margin: var(--space-md);
-  color: var(--text-gray);
+  color: var(--gray-500);
 `
 
 export const Link = styled.a`
@@ -19,7 +19,7 @@ export const Link = styled.a`
     width: 3px;
     height: 3px;
     border-radius: 999px;
-    background-color: var(--text-gray);
+    background-color: var(--gray-500);
   }
 
   &:last-child {
