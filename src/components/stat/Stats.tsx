@@ -15,15 +15,15 @@ interface Props {
   others: number
 }
 
-export function Stats() {
+export function Stats(stats: Props) {
   const { t } = useTranslation()
   return (
     <Flex>
-      <Stat title={t('stats.total')} value={25} />
-      <Stat title={t('stats.new')} value={10} />
-      <Stat title={t('stats.viewed')} value={5} />
-      <Stat title={t('stats.appointment')} value={3} />
-      <Stat title={t('stats.others')} value={6} />
+      <Stat title={t('stats.total')} value={stats.total} />
+      <Stat title={t('stats.new')} value={stats.new} />
+      <Stat title={t('stats.viewed')} value={stats.viewed} />
+      <Stat title={t('stats.appointment')} value={stats.appointment} />
+      <Stat title={t('stats.others')} value={stats.others} />
     </Flex>
   )
 }

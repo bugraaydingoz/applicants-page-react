@@ -8,8 +8,8 @@ import { ApplicantStatus } from '../../services/applicant'
 import { ReactComponent as BackIcon } from '../../components/shared/icons/back.svg'
 import { Search } from '../../components/search'
 import { Filter } from '../../components/filter'
-import { ApplicantList } from '../../components/applicant/ApplicantList'
-import { Stats } from '../../components/stat/Stats'
+import { ApplicantList } from '../../components/applicant'
+import { Stats } from '../../components/stat'
 
 // Styles
 import { PageContainer, Navigation, Left, Filters } from './styles'
@@ -41,7 +41,9 @@ export function ApplicantsPage() {
           {isMobile ? <H4>{t('applicants')}</H4> : <H3>{t('applicants')}</H3>}
         </Left>
 
-        {!isMobile && <Stats />}
+        {!isMobile && (
+          <Stats total={25} new={10} viewed={5} appointment={5} others={10} />
+        )}
       </Navigation>
 
       <Filters>
