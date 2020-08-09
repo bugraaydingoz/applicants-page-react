@@ -8,8 +8,9 @@ import { Stat } from '../../components/stat'
 import { Search } from '../../components/search'
 
 // Styles
-import { PageContainer, Navigation, Left, Right, Filters } from './styles'
+import { PageContainer, Navigation, Left, Right, Filters, Row } from './styles'
 import { H4, H3 } from '../../components/shared/typography'
+import { Filter } from '../../components/filter'
 
 export function ApplicantsPage() {
   const { t } = useTranslation()
@@ -37,6 +38,10 @@ export function ApplicantsPage() {
       {/* Filters */}
       <Filters>
         <Search />
+        <Row>
+          <Filter title={t('filters.bids')} />
+          <Filter title={t('filters.status')} />
+        </Row>
       </Filters>
     </PageContainer>
   )

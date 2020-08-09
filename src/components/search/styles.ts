@@ -11,6 +11,7 @@ export const SearchContainer = styled.div`
 
   @media (min-width: 768px) {
     width: 305px;
+    margin-right: var(--space-md);
   }
 `
 

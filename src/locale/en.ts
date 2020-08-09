@@ -8,5 +8,9 @@ export default {
       appointment: 'Appointment',
       others: 'Others',
     },
+    filters: {
+      bids: 'Bids',
+      status: 'Status',
+    },
   },
 }

@@ -30,6 +30,7 @@ export const Filters = styled.div`
   margin-bottom: var(--space-md);
 
   @media (min-width: 768px) {
+    flex-direction: row;
     margin-bottom: var(--space-lg);
   }
 `
@@ -40,5 +41,9 @@ export const Left = styled.div`
 `
 
 export const Right = styled.div`
+  display: flex;
+`
+
+export const Row = styled.div`
   display: flex;
 `
