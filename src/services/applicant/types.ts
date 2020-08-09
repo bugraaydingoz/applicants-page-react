@@ -13,5 +13,5 @@ export interface Applicant {
   status: ApplicantStatus
   appointmentISO: string | null
   viewedISO: string | null
-  bid: number
+  bid: number | null
 }
