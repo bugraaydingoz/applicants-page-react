@@ -35,6 +35,24 @@ export const Filters = styled.div`
   }
 `
 
+// export const ApplicantsContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `
+
+export const Applicants = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--space-lg);
+  margin-right: calc(-1 * var(--space-sm));
+  overflow: scroll;
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+    margin-right: calc(-1 * var(--space-md));
+  }
+`
+
 export const Left = styled.div`
   display: flex;
   cursor: pointer;

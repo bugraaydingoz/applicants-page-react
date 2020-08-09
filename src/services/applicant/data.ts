@@ -2,6 +2,7 @@ import { Applicant, ApplicantStatus } from './types'
 
 export const applicants: Applicant[] = [
   {
+    id: '719422c8-2311-4ef8-adf6-b60a12e9baed',
     firstName: 'Friedrich',
     lastName: 'Heinrich',
     phoneNumber: '+49 146 344 23811',
@@ -12,6 +13,7 @@ export const applicants: Applicant[] = [
     bid: null,
   },
   {
+    id: '679d7d88-f0bf-440a-8efe-8bb4babf1efc',
     firstName: 'Hans',
     lastName: 'Ulrich',
     phoneNumber: '+49 146 344 23811',
@@ -22,6 +24,7 @@ export const applicants: Applicant[] = [
     bid: null,
   },
   {
+    id: '71bc333f-4f05-4c87-ad72-cddfc3d5b2c5',
     firstName: 'Karl',
     lastName: 'Brandenburg',
     phoneNumber: '+49 146 344 23811',
@@ -32,6 +35,7 @@ export const applicants: Applicant[] = [
     bid: null,
   },
   {
+    id: '28bf3964-4be6-45df-a0de-581867b6b740',
     firstName: 'Karl',
     lastName: 'Brandenburg',
     phoneNumber: '+49 146 344 23811',
@@ -42,6 +46,7 @@ export const applicants: Applicant[] = [
     bid: null,
   },
   {
+    id: '1a7d3e6d-fc93-4239-9e9c-6c45223a40fc',
     firstName: 'Max',
     lastName: 'Mustermann',
     phoneNumber: '+49 146 344 23811',
@@ -52,6 +57,7 @@ export const applicants: Applicant[] = [
     bid: null,
   },
   {
+    id: '9e1b283c-20a3-497a-85ea-7e6bf3cd5ad8',
     firstName: 'Bernard',
     lastName: 'Weiss',
     phoneNumber: '+49 146 344 23811',
@@ -62,6 +68,7 @@ export const applicants: Applicant[] = [
     bid: null,
   },
   {
+    id: '69440c2d-a91c-47b0-b419-e6602ba50fc8',
     firstName: 'Mark',
     lastName: 'Schmidt',
     phoneNumber: '+49 146 344 23811',
@@ -72,6 +79,7 @@ export const applicants: Applicant[] = [
     bid: 200000,
   },
   {
+    id: 'bc5d77bc-9237-4b14-9cc6-021046e6e209',
     firstName: 'Markus',
     lastName: 'Brown',
     phoneNumber: '+49 146 344 23811',
@@ -82,6 +90,7 @@ export const applicants: Applicant[] = [
     bid: 300000,
   },
   {
+    id: '2e24a396-80e5-4ca6-9a8b-28b63f567204',
     firstName: 'Anja',
     lastName: 'Frühling',
     phoneNumber: '+49 146 344 23811',
