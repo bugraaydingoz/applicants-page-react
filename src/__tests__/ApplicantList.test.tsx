@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { Applicant } from '../components/applicant'
+import { ApplicantList } from '../components/applicant'
 import { ApplicantStatus } from '../services/applicant'
 
 const applicant = {
@@ -16,6 +16,8 @@ const applicant = {
 }
 
 test('renders correctly', () => {
-  const tree = renderer.create(<Applicant {...applicant} />).toJSON()
+  const tree = renderer
+    .create(<ApplicantList title="applicants" applicants={[applicant]} />)
+    .toJSON()
   expect(tree).toMatchSnapshot()
 })

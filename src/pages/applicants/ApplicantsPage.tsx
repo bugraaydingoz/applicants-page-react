@@ -2,29 +2,19 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useViewport } from '../../hooks/useViewport'
 
-import {
-  ApplicantStatus,
-  Applicant as ApplicantType,
-} from '../../services/applicant'
+import { ApplicantStatus } from '../../services/applicant'
 
 // Components
 import { ReactComponent as BackIcon } from '../../components/shared/icons/back.svg'
-import { Stat } from '../../components/stat'
 import { Search } from '../../components/search'
 import { Filter } from '../../components/filter'
-import { Applicant } from '../../components/applicant'
+import { ApplicantList } from '../../components/applicant/ApplicantList'
+import { Stats } from '../../components/stat/Stats'
 
 // Styles
-import {
-  PageContainer,
-  Navigation,
-  Left,
-  Right,
-  Filters,
-  Row,
-  Applicants,
-} from './styles'
+import { PageContainer, Navigation, Left, Filters } from './styles'
 import { H4, H3 } from '../../components/shared/typography'
+import { Flex } from '../../components/shared/layout'
 
 export function ApplicantsPage() {
   const { t } = useTranslation()
@@ -51,47 +41,19 @@ export function ApplicantsPage() {
           {isMobile ? <H4>{t('applicants')}</H4> : <H3>{t('applicants')}</H3>}
         </Left>
 
-        {!isMobile && (
-          <Right>
-            <Stat title={t('stats.total')} value={25} />
-            <Stat title={t('stats.new')} value={10} />
-            <Stat title={t('stats.viewed')} value={5} />
-            <Stat title={t('stats.appointment')} value={3} />
-            <Stat title={t('stats.others')} value={6} />
-          </Right>
-        )}
+        {!isMobile && <Stats />}
       </Navigation>
 
       <Filters>
         <Search />
-        <Row>
+        <Flex>
           <Filter title={t('filters.bids')} />
           <Filter title={t('filters.status')} />
-        </Row>
+        </Flex>
       </Filters>
 
-      <ApplicantList title="Appointment set" applicants={[applicant]} />
+      <ApplicantList title={t('titles.appointment')} applicants={[applicant]} />
+      <ApplicantList title={t('titles.viewed')} applicants={[applicant]} />
     </PageContainer>
-  )
-}
-
-interface Props {
-  title: string
-  applicants: ApplicantType[]
-}
-
-function ApplicantList({ title, applicants }: Props) {
-  return (
-    <>
-      <H4
-        style={{ marginBottom: 'var(--space-md)' }}
-      >{`${title} (${applicants.length})`}</H4>
-
-      <Applicants>
-        {applicants.map((applicant) => (
-          <Applicant key={applicant.id} {...applicant} />
-        ))}
-      </Applicants>
-    </>
   )
 }

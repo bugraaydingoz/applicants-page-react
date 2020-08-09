@@ -12,5 +12,9 @@ export default {
       bids: 'Bids',
       status: 'Status',
     },
+    titles: {
+      appointment: 'Appointment set',
+      viewed: 'Property viewed',
+    },
   },
 }
