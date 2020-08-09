@@ -5,6 +5,7 @@ export const ApplicantContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-right: var(--space-md);
+  padding: var(--space-sm) 0;
   width: 305px;
   min-width: 305px;
   height: 241px;
@@ -37,6 +38,49 @@ export const Applicants = styled.div`
     flex-wrap: wrap;
     margin-right: calc(-1 * var(--space-md));
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`
+
+interface Props {
+  color: string
+}
+
+export const AvatarContainer = styled.div<Props>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-xs);
+  width: 70px;
+  height: 70px;
+  border-radius: 999px;
+  background-color: ${({ color }) => color};
+`
+
+function CSSColor(color: string): string {
+  switch (color) {
+    case 'yellow':
+      return 'var(--yellow-400)'
+    case 'gray':
+    default:
+      return 'var(--gray-400)'
+  }
+}
+
+export const TagContainer = styled.div<Props>`
+  display: flex;
+  margin-bottom: var(--space-xs);
+  padding: 4px 8px;
+  height: 18px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 10px;
+  text-transform: uppercase;
+  color: white;
+  background-color: ${({ color }) => CSSColor(color)};
+  border-radius: var(--border-radius-md);
 
   &:last-child {
     margin-bottom: 0;
