@@ -5,9 +5,10 @@ import { useViewport } from '../../hooks/useViewport'
 // Components
 import { ReactComponent as BackIcon } from '../../components/shared/icons/back.svg'
 import { Stat } from '../../components/stat'
+import { Search } from '../../components/search'
 
 // Styles
-import { PageContainer, Navigation, Left, Right } from './styles'
+import { PageContainer, Navigation, Left, Right, Filters } from './styles'
 import { H4, H3 } from '../../components/shared/typography'
 
 export function ApplicantsPage() {
@@ -16,6 +17,7 @@ export function ApplicantsPage() {
   const isMobile = width < 768
   return (
     <PageContainer>
+      {/* Navigation */}
       <Navigation>
         <Left>
           <BackIcon style={{ marginRight: 'var(--space-sm)' }} />
@@ -31,6 +33,11 @@ export function ApplicantsPage() {
           </Right>
         )}
       </Navigation>
+
+      {/* Filters */}
+      <Filters>
+        <Search />
+      </Filters>
     </PageContainer>
   )
 }

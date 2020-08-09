@@ -16,11 +16,27 @@ export const Navigation = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  cursor: pointer;
+  margin-bottom: var(--space-md);
+
+  @media (min-width: 768px) {
+    margin-bottom: var(--space-lg);
+  }
+`
+
+export const Filters = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: var(--space-md);
+
+  @media (min-width: 768px) {
+    margin-bottom: var(--space-lg);
+  }
 `
 
 export const Left = styled.div`
   display: flex;
+  cursor: pointer;
 `
 
 export const Right = styled.div`
