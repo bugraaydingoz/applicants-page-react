@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-AxhUy gWBIVe"
+  color="#E3E7F9"
+>
+  <h5
+    className="sc-AxheI iQGnXX"
+    color="#405493"
+  >
+    BA
+  </h5>
+</div>
+`;

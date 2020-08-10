@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <h4
+    className="sc-AxirZ fOnMZm"
+    style={
+      Object {
+        "marginBottom": "var(--space-md)",
+      }
+    }
+  >
+    error.title
+  </h4>,
+  <div
+    className="sc-AxhUy eCIPUw"
+    style={
+      Object {
+        "marginBottom": "var(--space-sm)",
+      }
+    }
+  >
+    error.body
+  </div>,
+  <button
+    className="sc-AxgMl bxcmaw"
+    onClick={[Function]}
+  >
+    error.action
+  </button>,
+]
+`;

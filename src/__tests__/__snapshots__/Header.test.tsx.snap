@@ -1,3 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `<div />`;
+exports[`renders correctly 1`] = `
+<header
+  className="sc-AxjAm biOILs"
+>
+  <div
+    className="sc-AxirZ hlnYRa"
+  >
+    <div
+      className="sc-AxiKw loTGXf"
+    >
+      <svg>
+        menu.svg
+      </svg>
+    </div>
+    <svg>
+      logo.svg
+    </svg>
+  </div>
+  <div
+    className="sc-AxirZ hlnYRa"
+  >
+    <div
+      className="sc-AxiKw loTGXf"
+    >
+      <svg>
+        contact.svg
+      </svg>
+    </div>
+    <div
+      className="sc-AxiKw loTGXf"
+    >
+      <svg>
+        message-active.svg
+      </svg>
+    </div>
+    <div
+      className="sc-AxiKw loTGXf"
+    >
+      <svg>
+        user.svg
+      </svg>
+    </div>
+    <div
+      className="sc-AxiKw loTGXf"
+    >
+      <svg>
+        logout.svg
+      </svg>
+    </div>
+  </div>
+</header>
+`;

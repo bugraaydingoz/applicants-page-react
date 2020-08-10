@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-AxjAm iTFsFT"
+>
+  <div
+    className="sc-AxhUy kOuuun"
+    color="#FCD6DE"
+  >
+    <h5
+      className="sc-AxheI ehRhaS"
+      color="#E52A50"
+    >
+      AF
+    </h5>
+  </div>
+  <h5
+    className="sc-AxheI fpEalm"
+  >
+    Anja Frühling
+  </h5>
+  <div
+    className="sc-fzoLsD jtWSsd"
+  >
+    +49 146 344 23811
+  </div>
+  <div
+    className="sc-fzoLsD jtWSsd"
+    style={
+      Object {
+        "marginBottom": "var(--space-xs)",
+      }
+    }
+  >
+    anja.fruhling@gmail.com
+  </div>
+  <div
+    className="sc-AxgMl izxvdV"
+    color="gray"
+  >
+    stats.viewed 03 July 01:02
+  </div>
+  <div
+    className="sc-AxgMl eKXFpw"
+    color="yellow"
+  >
+    bid 400,000€
+  </div>
+</div>
+`;

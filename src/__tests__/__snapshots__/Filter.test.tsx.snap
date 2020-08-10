@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-AxjAm jDXiXI"
+>
+  <div
+    className="sc-AxhUy hwVAoa"
+    style={
+      Object {
+        "marginRight": "4px",
+      }
+    }
+  >
+    test
+  </div>
+  <svg>
+    arrow-down.svg
+  </svg>
+</div>
+`;
