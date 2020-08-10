@@ -9,15 +9,15 @@ interface Props {
   onClick: () => void
 }
 
-export function Error({ onClick }: Props) {
+export function NoResult({ onClick }: Props) {
   const { t } = useTranslation()
   return (
     <>
-      <H4 style={{ marginBottom: 'var(--space-md)' }}>{t('error.title')}</H4>
+      <H4 style={{ marginBottom: 'var(--space-md)' }}>{t('noResult.title')}</H4>
       <Body1 style={{ marginBottom: 'var(--space-sm)' }}>
-        {t('error.body')}
+        {t('noResult.body')}
       </Body1>
-      <Button onClick={onClick}>{t('error.action')}</Button>
+      <Button onClick={onClick}>{t('noResult.action')}</Button>
     </>
   )
 }

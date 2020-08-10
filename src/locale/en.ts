@@ -23,5 +23,10 @@ export default {
       body: "We couldn't fetch the applicants this time.",
       action: 'Try again',
     },
+    noResult: {
+      title: 'Oops!',
+      body: "We couldn't find any applicants with given criterias.",
+      action: 'Clear search',
+    },
   },
 }

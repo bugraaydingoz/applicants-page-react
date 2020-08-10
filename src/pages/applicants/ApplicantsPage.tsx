@@ -17,6 +17,7 @@ import { Filter } from '../../components/filter'
 import { ApplicantList } from '../../components/applicant'
 import { Stats } from '../../components/stat'
 import { Error } from '../../components/error'
+import { NoResult } from '../../components/no-result'
 
 // Styles
 import { PageContainer, Navigation, Left, Filters } from './styles'
@@ -84,6 +85,17 @@ export function ApplicantsPage() {
       </Filters>
 
       {isError && <Error onClick={() => refetch()} />}
+
+      {!isLoading && groups.every((group) => !group.data.length) && (
+        <NoResult
+          onClick={() => {
+            setUrlQuery({
+              minBid,
+              maxBid,
+            })
+          }}
+        />
+      )}
 
       {!isError &&
         groups.map((group) => (
