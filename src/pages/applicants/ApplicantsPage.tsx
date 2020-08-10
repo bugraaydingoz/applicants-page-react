@@ -1,11 +1,14 @@
-import React from 'react'
-import { ApplicantService, Status } from '../../services/applicant'
-import { lowerCase } from 'lodash-es'
+import React, { useEffect } from 'react'
 
 // Hooks
 import { useQuery } from 'react-query'
 import { useTranslation } from 'react-i18next'
 import { useViewport } from '../../hooks/useViewport'
+import { useUrlQuery } from '../../hooks/useUrlQuery'
+import { useFilter } from '../../hooks/useFilter'
+
+// Services
+import { ApplicantService } from '../../services/applicant'
 
 // Components
 import { ReactComponent as BackIcon } from '../../components/shared/icons/back.svg'
@@ -34,13 +37,24 @@ export function ApplicantsPage() {
     }
   )
 
-  const groups = Object.entries(Status).map(([key, status]) => {
-    const apps = applicants?.filter((app) => app.status === status)
-    return {
-      key: lowerCase(key),
-      data: apps ?? [],
+  const [urlQuery, setUrlQuery] = useUrlQuery()
+
+  useEffect(() => {
+    if (!applicants?.length) {
+      return
     }
-  })
+
+    const bids = applicants.filter((app) => app.bid).map((app) => app.bid ?? 0)
+
+    // Set default filters
+    setUrlQuery({
+      minBid: Math.min(...bids),
+      maxBid: Math.max(...bids),
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [applicants])
+
+  const { stats, groups } = useFilter(applicants, urlQuery)
 
   return (
     <PageContainer>
@@ -52,11 +66,11 @@ export function ApplicantsPage() {
 
         {!isMobile && (
           <Stats
-            total={applicants?.length || 0}
-            new={10}
-            viewed={5}
-            appointment={5}
-            others={10}
+            isLoading={isLoading}
+            total={stats.total}
+            appointment={stats.appointment}
+            viewed={stats.viewed}
+            others={stats.interested + stats.accepted}
           />
         )}
       </Navigation>
@@ -77,7 +91,7 @@ export function ApplicantsPage() {
             key={group.key}
             title={t(`titles.${group.key}`)}
             applicants={group.data}
-            loading={isLoading}
+            isLoading={isLoading}
           />
         ))}
     </PageContainer>

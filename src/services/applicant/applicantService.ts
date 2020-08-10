@@ -8,7 +8,7 @@ export class ApplicantService {
     await delayFor(random(200, 1200))
 
     // Mock server error
-    if (random(1, 10) < 4) {
+    if (random(1, 10) < 3) {
       throw new Error("Applicants couldn't fetched")
     }
 

@@ -1,11 +1,19 @@
 import { useLocation, useHistory } from 'react-router'
 
-interface UrlQuery {
+export interface UrlQuery {
   [key: string]: string
   search: string
+  minBid: string
+  maxBid: string
 }
 
-export function useQuery() {
+export interface UrlQueryValues {
+  search: string | null
+  minBid: number | null
+  maxBid: number | null
+}
+
+export function useUrlQuery() {
   const location = useLocation()
   const history = useHistory()
   const query = new URLSearchParams(location.search)

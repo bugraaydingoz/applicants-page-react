@@ -3,9 +3,8 @@ export default {
     applicants: 'Applicants',
     stats: {
       total: 'Total',
-      new: 'New',
-      viewed: 'Viewed',
       appointment: 'Appointment',
+      viewed: 'Viewed',
       others: 'Others',
     },
     filters: {

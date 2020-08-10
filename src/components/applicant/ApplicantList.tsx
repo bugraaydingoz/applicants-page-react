@@ -9,13 +9,13 @@ import { Applicants, ApplicantMock, LoadingBar } from './styles'
 import { H4 } from '../shared/typography'
 
 interface Props {
+  isLoading: boolean
   title: string
   applicants: ApplicantType[]
-  loading: boolean
 }
 
-export function ApplicantList({ title, applicants, loading }: Props) {
-  if (loading) {
+export function ApplicantList({ title, applicants, isLoading }: Props) {
+  if (isLoading) {
     return (
       <>
         <LoadingBar />
