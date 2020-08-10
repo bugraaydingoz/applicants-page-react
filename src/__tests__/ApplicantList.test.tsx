@@ -10,8 +10,7 @@ const applicant = {
   phoneNumber: '+49 146 344 23811',
   emailAddress: 'anja.fruhling@gmail.com',
   status: ApplicantStatus.Viewed,
-  appointmentISO: '2020-07-02T23:02:00.661Z',
-  viewedISO: '2020-07-02T23:02:00.661Z',
+  appointmentDate: '2020-07-02T23:02:00.661Z',
   bid: 400000,
 }
 

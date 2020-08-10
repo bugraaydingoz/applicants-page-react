@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useViewport } from '../../hooks/useViewport'
 
-import { ApplicantStatus } from '../../services/applicant'
+import { ApplicantStatus, Applicant } from '../../services/applicant'
 
 // Components
 import { ReactComponent as BackIcon } from '../../components/shared/icons/back.svg'
@@ -21,15 +21,14 @@ export function ApplicantsPage() {
   const { width } = useViewport()
   const isMobile = width < 768
 
-  const applicant = {
+  const applicant: Applicant = {
     id: '2e24a396-80e5-4ca6-9a8b-28b63f567204',
     firstName: 'Anja',
     lastName: 'Frühling',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'anja.fruhling@gmail.com',
     status: ApplicantStatus.Viewed,
-    appointmentISO: '2020-07-02T23:02:00.661Z',
-    viewedISO: '2020-07-02T23:02:00.661Z',
+    appointmentDate: '2020-07-02T23:02:00.661Z',
     bid: 400000,
   }
 

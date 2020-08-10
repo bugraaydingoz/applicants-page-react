@@ -12,7 +12,6 @@ export interface Applicant {
   phoneNumber: string
   emailAddress: string
   status: ApplicantStatus
-  appointmentISO: string | null
-  viewedISO: string | null
+  appointmentDate: string | null
   bid: number | null
 }

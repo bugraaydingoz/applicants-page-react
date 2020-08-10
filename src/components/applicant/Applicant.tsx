@@ -1,5 +1,9 @@
 import React from 'react'
-import type { Applicant as Props } from '../../services/applicant'
+import { format } from 'date-fns'
+import {
+  Applicant as ApplicantType,
+  ApplicantStatus,
+} from '../../services/applicant'
 
 // Components
 import { Avatar } from './Avatar'
@@ -9,7 +13,7 @@ import { ApplicantContainer } from './styles'
 import { H5, Body1 } from '../shared/typography'
 import { Tag } from './Tag'
 
-export function Applicant(applicant: Props) {
+export function Applicant(applicant: ApplicantType) {
   return (
     <ApplicantContainer>
       <Avatar firstName={applicant.firstName} lastName={applicant.lastName} />
@@ -19,13 +23,23 @@ export function Applicant(applicant: Props) {
         {applicant.emailAddress}
       </Body1>
 
-      {applicant.appointmentISO && (
-        <Tag color="gray">{applicant.appointmentISO}</Tag>
+      {applicant.appointmentDate && (
+        <Tag color="gray">{formatDate(applicant)}</Tag>
       )}
 
-      {/* {applicant.viewedISO && <Tag color="gray">{applicant.viewedISO}</Tag>} */}
-
-      {applicant.bid && <Tag color="yellow">{applicant.bid}</Tag>}
+      {applicant.bid && <Tag color="yellow">{formatMoney(applicant.bid)}</Tag>}
     </ApplicantContainer>
   )
+}
+
+function formatDate(applicant: ApplicantType): string {
+  const title =
+    applicant.status === ApplicantStatus.Appointment ? 'Appointment' : 'Viewed'
+  const date = format(new Date(applicant.appointmentDate ?? 0), 'dd MMMM HH:mm')
+  return `${title} ${date}`
+}
+
+function formatMoney(money: number): string {
+  const formatter = new Intl.NumberFormat('de-DE', { currency: 'EUR' })
+  return `BID ${formatter.format(money)}€`
 }

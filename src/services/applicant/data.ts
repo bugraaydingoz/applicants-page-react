@@ -8,8 +8,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'friedrich.heinrich@gmail.com',
     status: ApplicantStatus.New,
-    appointmentISO: null,
-    viewedISO: null,
+    appointmentDate: null,
     bid: null,
   },
   {
@@ -19,8 +18,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'hans.ulrich@gmail.com',
     status: ApplicantStatus.New,
-    appointmentISO: null,
-    viewedISO: null,
+    appointmentDate: null,
     bid: null,
   },
   {
@@ -30,8 +28,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'karl.brandenburg@gmail.com',
     status: ApplicantStatus.New,
-    appointmentISO: null,
-    viewedISO: null,
+    appointmentDate: null,
     bid: null,
   },
   {
@@ -41,8 +38,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'karl.brandenburg@gmail.com',
     status: ApplicantStatus.Appointment,
-    appointmentISO: '2020-08-08T23:02:00.661Z',
-    viewedISO: null,
+    appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
   {
@@ -52,8 +48,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'max.mustermann@gmail.com',
     status: ApplicantStatus.Appointment,
-    appointmentISO: '2020-08-08T23:02:00.661Z',
-    viewedISO: null,
+    appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
   {
@@ -63,8 +58,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'bernard.weiss@gmail.com',
     status: ApplicantStatus.Appointment,
-    appointmentISO: '2020-08-08T23:02:00.661Z',
-    viewedISO: null,
+    appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
   {
@@ -74,8 +68,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'mark.schmidt@gmail.com',
     status: ApplicantStatus.Viewed,
-    appointmentISO: '2020-07-02T23:02:00.661Z',
-    viewedISO: '2020-07-02T23:02:00.661Z',
+    appointmentDate: '2020-07-02T23:02:00.661Z',
     bid: 200000,
   },
   {
@@ -85,8 +78,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'markus.brown@gmail.com',
     status: ApplicantStatus.Viewed,
-    appointmentISO: '2020-07-02T23:02:00.661Z',
-    viewedISO: '2020-07-02T23:02:00.661Z',
+    appointmentDate: '2020-07-02T23:02:00.661Z',
     bid: 300000,
   },
   {
@@ -96,8 +88,7 @@ export const applicants: Applicant[] = [
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'anja.fruhling@gmail.com',
     status: ApplicantStatus.Viewed,
-    appointmentISO: '2020-07-02T23:02:00.661Z',
-    viewedISO: '2020-07-02T23:02:00.661Z',
+    appointmentDate: '2020-07-02T23:02:00.661Z',
     bid: 400000,
   },
 ]
