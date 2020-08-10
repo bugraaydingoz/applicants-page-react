@@ -19,5 +19,10 @@ export default {
       accepted: 'Offer accepted',
     },
     bid: 'BID',
+    error: {
+      title: 'Oops!',
+      body: "We couldn't fetch the applicants this time.",
+      action: 'Try again',
+    },
   },
 }

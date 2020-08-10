@@ -33,8 +33,8 @@ export const applicants: Applicant[] = [
   },
   {
     id: '28bf3964-4be6-45df-a0de-581867b6b740',
-    firstName: 'Karl',
-    lastName: 'Brandenburg',
+    firstName: 'Matz',
+    lastName: 'Bear',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'karl.brandenburg@gmail.com',
     status: Status.Appointment,

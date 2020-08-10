@@ -13,6 +13,7 @@ import { Search } from '../../components/search'
 import { Filter } from '../../components/filter'
 import { ApplicantList } from '../../components/applicant'
 import { Stats } from '../../components/stat'
+import { Error } from '../../components/error'
 
 // Styles
 import { PageContainer, Navigation, Left, Filters } from './styles'
@@ -24,10 +25,13 @@ export function ApplicantsPage() {
   const { width } = useViewport()
   const isMobile = width < 768
 
-  const { isLoading, error, data: applicants } = useQuery(
+  const { isLoading, isError, data: applicants, refetch } = useQuery(
     'applicants',
     ApplicantService.getAll,
-    { retry: false } // react-query retries on error by default
+    {
+      retry: false, // react-query retries on error by default
+      refetchOnWindowFocus: false, // it brings a weird behavior with high rate errors
+    }
   )
 
   const groups = Object.entries(Status).map(([key, status]) => {
@@ -65,7 +69,9 @@ export function ApplicantsPage() {
         </Flex>
       </Filters>
 
-      {!error &&
+      {isError && <Error onClick={() => refetch()} />}
+
+      {!isError &&
         groups.map((group) => (
           <ApplicantList
             key={group.key}
