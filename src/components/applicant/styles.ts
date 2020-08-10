@@ -42,13 +42,16 @@ export const LoadingBar = styled.div`
 export const Applicants = styled.div`
   display: flex;
   flex-direction: row;
-  margin-bottom: var(--space-lg);
-  margin-right: calc(-1 * var(--space-sm));
+  margin: 0 calc(-1 * var(--space-sm)) var(--space-lg)
+    calc(-1 * var(--space-sm));
+  padding-left: var(--space-sm);
   overflow: scroll;
 
   @media (min-width: 768px) {
     flex-wrap: wrap;
     margin-right: calc(-1 * var(--space-md));
+    margin-left: 0;
+    padding-left: 0;
   }
 
   &:last-child {
