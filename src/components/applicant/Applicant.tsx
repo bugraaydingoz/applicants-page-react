@@ -11,7 +11,7 @@ import { ApplicantContainer } from './styles'
 import { H5, Body1 } from '../shared/typography'
 import { Tag } from './Tag'
 
-export function Applicant(applicant: ApplicantType) {
+export const Applicant = React.memo((applicant: ApplicantType) => {
   const { t } = useTranslation()
   function formatDate(applicant: ApplicantType): string {
     const title =
@@ -48,4 +48,4 @@ export function Applicant(applicant: ApplicantType) {
       {applicant.bid && <Tag color="yellow">{formatMoney(applicant.bid)}</Tag>}
     </ApplicantContainer>
   )
-}
+})
