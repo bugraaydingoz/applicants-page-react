@@ -8,7 +8,7 @@ import { useUrlQuery } from '../../hooks/useUrlQuery'
 import { useFilter } from '../../hooks/useFilter'
 
 // Services
-import { ApplicantService } from '../../services/applicant'
+import { ApplicantService, Applicant } from '../../services/applicant'
 
 // Components
 import { ReactComponent as BackIcon } from '../../components/shared/icons/back.svg'
@@ -39,23 +39,33 @@ export function ApplicantsPage() {
   )
 
   const [urlQuery, setUrlQuery] = useUrlQuery()
+  const { stats, groups } = useFilter(applicants, urlQuery)
 
-  useEffect(() => {
-    if (!applicants?.length) {
-      return
-    }
+  useEffect(
+    () => {
+      if (!applicants?.length) {
+        return
+      }
 
+      const { minBid, maxBid, search } = defaultFilters(applicants)
+      setUrlQuery({
+        search,
+        minBid,
+        maxBid,
+      })
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [applicants]
+  )
+
+  function defaultFilters(applicants: Applicant[]) {
     const bids = applicants.filter((app) => app.bid).map((app) => app.bid ?? 0)
-
-    // Set default filters
-    setUrlQuery({
+    return {
+      search: '',
       minBid: Math.min(...bids),
       maxBid: Math.max(...bids),
-    })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [applicants])
-
-  const { stats, groups } = useFilter(applicants, urlQuery)
+    }
+  }
 
   return (
     <PageContainer>
@@ -86,12 +96,17 @@ export function ApplicantsPage() {
 
       {isError && <Error onClick={() => refetch()} />}
 
-      {!isLoading && groups.every((group) => !group.data.length) && (
+      {!isError && !isLoading && groups.every((group) => !group.data.length) && (
         <NoResult
           onClick={() => {
+            if (!applicants?.length) {
+              return
+            }
+            const { minBid, maxBid, search } = defaultFilters(applicants)
             setUrlQuery({
               minBid,
               maxBid,
+              search,
             })
           }}
         />

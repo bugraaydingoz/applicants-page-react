@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 // Components
 import { ReactComponent as SearchIcon } from '../shared/icons/search.svg'
@@ -11,7 +11,15 @@ import { SearchContainer, Input } from './styles'
 
 export function Search() {
   const [urlQuery, setUrlQuery] = useUrlQuery()
-  const [search, setSearch] = useState(urlQuery.search || '')
+  const [search, setSearch] = useState(urlQuery.search ?? '')
+
+  useEffect(() => {
+    if (!urlQuery.search?.length) {
+      return
+    }
+    setSearch(urlQuery.search)
+  }, [urlQuery.search])
+
   return (
     <SearchContainer>
       <SearchIcon />
