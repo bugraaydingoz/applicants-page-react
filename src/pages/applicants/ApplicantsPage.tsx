@@ -1,8 +1,11 @@
 import React from 'react'
+import { ApplicantService, Status } from '../../services/applicant'
+import { lowerCase } from 'lodash-es'
+
+// Hooks
+import { useQuery } from 'react-query'
 import { useTranslation } from 'react-i18next'
 import { useViewport } from '../../hooks/useViewport'
-
-import { ApplicantStatus, Applicant } from '../../services/applicant'
 
 // Components
 import { ReactComponent as BackIcon } from '../../components/shared/icons/back.svg'
@@ -21,16 +24,19 @@ export function ApplicantsPage() {
   const { width } = useViewport()
   const isMobile = width < 768
 
-  const applicant: Applicant = {
-    id: '2e24a396-80e5-4ca6-9a8b-28b63f567204',
-    firstName: 'Anja',
-    lastName: 'Frühling',
-    phoneNumber: '+49 146 344 23811',
-    emailAddress: 'anja.fruhling@gmail.com',
-    status: ApplicantStatus.Viewed,
-    appointmentDate: '2020-07-02T23:02:00.661Z',
-    bid: 400000,
-  }
+  const { isLoading, error, data: applicants } = useQuery(
+    'applicants',
+    ApplicantService.getAll,
+    { retry: false } // react-query retries on error by default
+  )
+
+  const groups = Object.entries(Status).map(([key, status]) => {
+    const apps = applicants?.filter((app) => app.status === status)
+    return {
+      key: lowerCase(key),
+      data: apps ?? [],
+    }
+  })
 
   return (
     <PageContainer>
@@ -41,7 +47,13 @@ export function ApplicantsPage() {
         </Left>
 
         {!isMobile && (
-          <Stats total={25} new={10} viewed={5} appointment={5} others={10} />
+          <Stats
+            total={applicants?.length || 0}
+            new={10}
+            viewed={5}
+            appointment={5}
+            others={10}
+          />
         )}
       </Navigation>
 
@@ -53,8 +65,15 @@ export function ApplicantsPage() {
         </Flex>
       </Filters>
 
-      <ApplicantList title={t('titles.appointment')} applicants={[applicant]} />
-      <ApplicantList title={t('titles.viewed')} applicants={[applicant]} />
+      {!error &&
+        groups.map((group) => (
+          <ApplicantList
+            key={group.key}
+            title={t(`titles.${group.key}`)}
+            applicants={group.data}
+            loading={isLoading}
+          />
+        ))}
     </PageContainer>
   )
 }

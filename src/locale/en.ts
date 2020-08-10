@@ -15,6 +15,9 @@ export default {
     titles: {
       appointment: 'Appointment set',
       viewed: 'Property viewed',
+      interested: 'Interested',
+      accepted: 'Offer accepted',
     },
+    bid: 'BID',
   },
 }

@@ -1,9 +1,11 @@
-export enum ApplicantStatus {
-  New,
-  Viewed,
-  Appointment,
-  Others,
+export enum Status {
+  Appointment = 'Appointment_Set',
+  Viewed = 'Property_Viewed',
+  Interested = 'Interested',
+  Accepted = 'Offer_Accepted',
 }
+
+// export type StatusStrings = keyof typeof Status
 
 export interface Applicant {
   id: string
@@ -11,7 +13,7 @@ export interface Applicant {
   lastName: string
   phoneNumber: string
   emailAddress: string
-  status: ApplicantStatus
+  status: Status
   appointmentDate: string | null
   bid: number | null
 }

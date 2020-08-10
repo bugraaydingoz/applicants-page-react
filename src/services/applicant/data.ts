@@ -1,4 +1,4 @@
-import { Applicant, ApplicantStatus } from './types'
+import { Applicant, Status } from './types'
 
 export const applicants: Applicant[] = [
   {
@@ -7,8 +7,8 @@ export const applicants: Applicant[] = [
     lastName: 'Heinrich',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'friedrich.heinrich@gmail.com',
-    status: ApplicantStatus.New,
-    appointmentDate: null,
+    status: Status.Appointment,
+    appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
   {
@@ -17,8 +17,8 @@ export const applicants: Applicant[] = [
     lastName: 'Ulrich',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'hans.ulrich@gmail.com',
-    status: ApplicantStatus.New,
-    appointmentDate: null,
+    status: Status.Appointment,
+    appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
   {
@@ -27,8 +27,8 @@ export const applicants: Applicant[] = [
     lastName: 'Brandenburg',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'karl.brandenburg@gmail.com',
-    status: ApplicantStatus.New,
-    appointmentDate: null,
+    status: Status.Appointment,
+    appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
   {
@@ -37,7 +37,7 @@ export const applicants: Applicant[] = [
     lastName: 'Brandenburg',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'karl.brandenburg@gmail.com',
-    status: ApplicantStatus.Appointment,
+    status: Status.Appointment,
     appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
@@ -47,7 +47,7 @@ export const applicants: Applicant[] = [
     lastName: 'Mustermann',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'max.mustermann@gmail.com',
-    status: ApplicantStatus.Appointment,
+    status: Status.Appointment,
     appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
@@ -57,7 +57,7 @@ export const applicants: Applicant[] = [
     lastName: 'Weiss',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'bernard.weiss@gmail.com',
-    status: ApplicantStatus.Appointment,
+    status: Status.Appointment,
     appointmentDate: '2020-08-08T23:02:00.661Z',
     bid: null,
   },
@@ -67,7 +67,7 @@ export const applicants: Applicant[] = [
     lastName: 'Schmidt',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'mark.schmidt@gmail.com',
-    status: ApplicantStatus.Viewed,
+    status: Status.Viewed,
     appointmentDate: '2020-07-02T23:02:00.661Z',
     bid: 200000,
   },
@@ -77,7 +77,7 @@ export const applicants: Applicant[] = [
     lastName: 'Brown',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'markus.brown@gmail.com',
-    status: ApplicantStatus.Viewed,
+    status: Status.Viewed,
     appointmentDate: '2020-07-02T23:02:00.661Z',
     bid: 300000,
   },
@@ -87,7 +87,7 @@ export const applicants: Applicant[] = [
     lastName: 'Frühling',
     phoneNumber: '+49 146 344 23811',
     emailAddress: 'anja.fruhling@gmail.com',
-    status: ApplicantStatus.Viewed,
+    status: Status.Viewed,
     appointmentDate: '2020-07-02T23:02:00.661Z',
     bid: 400000,
   },

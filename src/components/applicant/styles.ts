@@ -27,6 +27,18 @@ export const ApplicantContainer = styled.div`
   }
 `
 
+// Inherit from applicant container
+export const ApplicantMock = styled(ApplicantContainer)`
+  background-color: var(--gray-200);
+`
+
+export const LoadingBar = styled.div`
+  margin: 0 0 var(--space-md) 0;
+  height: 24px;
+  width: 200px;
+  background-color: var(--gray-200);
+`
+
 export const Applicants = styled.div`
   display: flex;
   flex-direction: row;

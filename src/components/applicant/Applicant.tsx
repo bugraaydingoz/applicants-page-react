@@ -1,9 +1,7 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { format } from 'date-fns'
-import {
-  Applicant as ApplicantType,
-  ApplicantStatus,
-} from '../../services/applicant'
+import { Applicant as ApplicantType, Status } from '../../services/applicant'
 
 // Components
 import { Avatar } from './Avatar'
@@ -14,6 +12,26 @@ import { H5, Body1 } from '../shared/typography'
 import { Tag } from './Tag'
 
 export function Applicant(applicant: ApplicantType) {
+  const { t } = useTranslation()
+  function formatDate(applicant: ApplicantType): string {
+    const title =
+      applicant.status === Status.Appointment
+        ? t('stats.appointment')
+        : t('stats.viewed')
+
+    const date = format(
+      new Date(applicant.appointmentDate ?? 0),
+      'dd MMMM HH:mm'
+    )
+
+    return `${title} ${date}`
+  }
+
+  function formatMoney(money: number): string {
+    const formatter = new Intl.NumberFormat('de-DE', { currency: 'EUR' })
+    return `${t('bid')} ${formatter.format(money)}€`
+  }
+
   return (
     <ApplicantContainer>
       <Avatar firstName={applicant.firstName} lastName={applicant.lastName} />
@@ -30,16 +48,4 @@ export function Applicant(applicant: ApplicantType) {
       {applicant.bid && <Tag color="yellow">{formatMoney(applicant.bid)}</Tag>}
     </ApplicantContainer>
   )
-}
-
-function formatDate(applicant: ApplicantType): string {
-  const title =
-    applicant.status === ApplicantStatus.Appointment ? 'Appointment' : 'Viewed'
-  const date = format(new Date(applicant.appointmentDate ?? 0), 'dd MMMM HH:mm')
-  return `${title} ${date}`
-}
-
-function formatMoney(money: number): string {
-  const formatter = new Intl.NumberFormat('de-DE', { currency: 'EUR' })
-  return `BID ${formatter.format(money)}€`
 }
