@@ -14,6 +14,10 @@ const applicant: ApplicantType = {
   bid: 400000,
 }
 
+jest.mock('../services/utils', () => ({
+  random: jest.fn().mockImplementation(() => 0),
+}))
+
 test('renders correctly', () => {
   const tree = renderer.create(<Applicant {...applicant} />).toJSON()
   expect(tree).toMatchSnapshot()

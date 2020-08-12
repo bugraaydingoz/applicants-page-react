@@ -3,6 +3,7 @@ import React from 'react'
 // Styles
 import { AvatarContainer } from './styles'
 import { H5 } from '../shared/typography'
+import { random } from '../../services/utils'
 
 const colors = [
   // Purple
@@ -42,8 +43,7 @@ interface Props {
 }
 
 export function Avatar({ firstName, lastName }: Props) {
-  const random = () => Math.floor(Math.random() * colors.length - 1) + 1
-  const color = colors[random()]
+  const color = colors[random(0, colors.length)]
   const initials = `${firstName[0]}${lastName[0]}`
   return (
     <AvatarContainer color={color.light}>

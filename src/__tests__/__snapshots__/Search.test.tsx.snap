@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-AxjAm hAIJkN"
+>
+  <svg>
+    search.svg
+  </svg>
+  <input
+    className="sc-AxirZ klVCza"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder="Search for applicant"
+    type="text"
+    value=""
+  />
+</div>
+`;
