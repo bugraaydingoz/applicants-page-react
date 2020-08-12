@@ -5,7 +5,6 @@ import { useQuery } from 'react-query'
 import { useTranslation } from 'react-i18next'
 import { useViewport } from '../../hooks/useViewport'
 import { useUrlQuery } from '../../hooks/useUrlQuery'
-import { useFilter } from '../../hooks/useFilter'
 
 // Services
 import { ApplicantService, Applicant } from '../../services/applicant'
@@ -39,7 +38,7 @@ export function ApplicantsPage() {
   )
 
   const [urlQuery, setUrlQuery] = useUrlQuery()
-  const { stats, groups } = useFilter(applicants, urlQuery)
+  const { stats, groups } = ApplicantService.filter(applicants, urlQuery)
 
   useEffect(
     () => {
