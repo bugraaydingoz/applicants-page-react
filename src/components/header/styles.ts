@@ -20,7 +20,7 @@ export const ActionContainer = styled.div`
   align-items: center;
   cursor: pointer;
   width: 32px;
-  margin-right: var(--space-md);
+  margin-right: var(--space-lg);
 
   &:last-child {
     margin-right: 0;

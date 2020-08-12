@@ -1,6 +1,9 @@
 export default {
   translation: {
     applicants: 'Applicants',
+    header: {
+      contactSupport: 'Contact Support',
+    },
     stats: {
       total: 'Total',
       appointment: 'Appointment',

@@ -1,5 +1,8 @@
 import React from 'react'
+
+// Hooks
 import { useViewport } from '../../hooks/useViewport'
+import { useTranslation } from 'react-i18next'
 
 // Components
 import { ReactComponent as MenuIcon } from '../shared/icons/menu.svg'
@@ -11,6 +14,7 @@ import { ReactComponent as LogoutIcon } from '../shared/icons/logout.svg'
 
 // Styles
 import { HeaderContainer, ActionsContainer, ActionContainer } from './styles'
+import { H5 } from '../shared/typography'
 
 export function Header() {
   const { width } = useViewport()
@@ -33,6 +37,7 @@ function HeaderMobile() {
 }
 
 function HeaderDesktop() {
+  const { t } = useTranslation()
   return (
     <>
       {/* Left buttons */}
@@ -45,8 +50,9 @@ function HeaderDesktop() {
 
       {/* Right buttons */}
       <ActionsContainer>
-        <ActionContainer>
-          <ContactIcon />
+        <ActionContainer style={{ width: 'auto' }}>
+          <ContactIcon style={{ marginRight: 'var(--space-xs' }} />
+          <H5>{t('header.contactSupport')}</H5>
         </ActionContainer>
         <ActionContainer>
           <MessageActiveIcon />

@@ -8,7 +8,7 @@ exports[`renders correctly 1`] = `
     className="sc-AxirZ hlnYRa"
   >
     <div
-      className="sc-AxiKw loTGXf"
+      className="sc-AxiKw bWcrCB"
     >
       <svg>
         menu.svg
@@ -22,28 +22,44 @@ exports[`renders correctly 1`] = `
     className="sc-AxirZ hlnYRa"
   >
     <div
-      className="sc-AxiKw loTGXf"
+      className="sc-AxiKw bWcrCB"
+      style={
+        Object {
+          "width": "auto",
+        }
+      }
     >
-      <svg>
+      <svg
+        style={
+          Object {
+            "marginRight": "var(--space-xs",
+          }
+        }
+      >
         contact.svg
       </svg>
+      <h5
+        className="sc-AxhCb evMNyv"
+      >
+        header.contactSupport
+      </h5>
     </div>
     <div
-      className="sc-AxiKw loTGXf"
+      className="sc-AxiKw bWcrCB"
     >
       <svg>
         message-active.svg
       </svg>
     </div>
     <div
-      className="sc-AxiKw loTGXf"
+      className="sc-AxiKw bWcrCB"
     >
       <svg>
         user.svg
       </svg>
     </div>
     <div
-      className="sc-AxiKw loTGXf"
+      className="sc-AxiKw bWcrCB"
     >
       <svg>
         logout.svg
