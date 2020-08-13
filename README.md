@@ -9,11 +9,11 @@ Applicants page is a single page react application where you can see all the app
 2. Error and loading states
 3. Random applicant avatars
 4. Snapshot tests
-5. Mobile-first design approach
+5. Mobile-first responsive design approach
 6. Easy to customize the theme by CSS variables
 7. CSS-in-JS approach
 8. Localization ready
-9. CD pipeline using Vercell
+9. CD pipeline using Vercel
 
 ## See in action
 
@@ -21,6 +21,7 @@ https://applicants-page-react.vercel.app/
 
 ## Technologies
 
+- TypeScript
 - React (Hooks)
 - React Router
 - React Query
